@@ -76,49 +76,49 @@ export default function Contacto() {
 
   return (
     <>
-      <section className="bg-primary text-primary-foreground">
-        <div className="container py-20 md:py-24">
-          <p className="text-sm font-semibold uppercase tracking-widest text-orange-400 mb-4">
+      <section className="bg-primary text-white">
+        <div className="container px-4 md:px-6 py-16 md:py-24 lg:py-32">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-widest text-accent mb-4 md:mb-6">
             ¿Necesitas ayuda?
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-8 leading-tight">
             Contacto
           </h1>
-          <p className="text-lg text-primary-foreground/90 max-w-2xl leading-relaxed font-light">
+          <p className="text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
             Estamos para ayudarte. Escribinos o visitanos en nuestra sede.
           </p>
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white to-blue-50 py-20 md:py-24">
-        <div className="container">
+      <section className="bg-secondary/20 py-16 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Info */}
             <div className="lg:col-span-2 space-y-8">
               <div>
-                <h2 className="text-2xl font-display font-bold text-black tracking-tight mb-2">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
                   Información de contacto
                 </h2>
-                <p className="text-gray-600 text-sm">
+                <p className="text-muted text-base">
                   Nos encontramos disponibles para brindarte la ayuda que necesites.
                 </p>
               </div>
               <div className="space-y-6">
                 {infoItems.map((item) => (
-                  <div key={item.label} className="flex gap-4 p-4 rounded-lg bg-white border border-blue-100 hover:shadow-md transition-shadow">
-                    <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white flex-shrink-0">
+                  <div key={item.label} className="flex gap-4 p-5 md:p-6 rounded-lg bg-white border border-gray-200 hover:shadow-md hover:border-primary/20 transition-all">
+                    <div className="h-12 w-12 rounded-lg bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
                       {item.icon}
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide">{item.label}</p>
-                      <p className="text-black font-medium mt-1">{item.value}</p>
+                    <div className="flex-1">
+                      <p className="text-xs md:text-sm font-semibold text-muted uppercase tracking-wide">{item.label}</p>
+                      <p className="text-base font-medium text-gray-900 mt-2">{item.value}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Map placeholder */}
-              <div className="rounded-xl overflow-hidden border border-blue-100 aspect-[4/3] shadow-sm">
+              <div className="rounded-lg overflow-hidden border border-gray-200 aspect-[4/3] shadow-sm">
                 <iframe
                   title="Ubicación de la escuela"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=-64.30%2C-36.63%2C-64.26%2C-36.61&layer=mapnik"
@@ -130,13 +130,13 @@ export default function Contacto() {
 
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="rounded-xl border border-blue-100 bg-white p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow">
-                <h2 className="text-2xl font-display font-bold text-blakc tracking-tight mb-8">
+              <div className="rounded-lg border border-gray-200 bg-white p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow">
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">
                   Envianos un mensaje
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="nombre" className="text-sm font-semibold text-gray-700">
+                  <div className="space-y-3">
+                    <Label htmlFor="nombre" className="text-sm font-semibold text-gray-900">
                       Nombre completo
                     </Label>
                     <Input
@@ -145,13 +145,13 @@ export default function Contacto() {
                       value={form.nombre}
                       onChange={(e) => handleChange("nombre", e.target.value)}
                       maxLength={100}
-                      className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="rounded-lg border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
-                    {errors.nombre && <p className="text-sm font-medium text-red-500">{errors.nombre}</p>}
+                    {errors.nombre && <p className="text-sm font-medium text-red-600">{errors.nombre}</p>}
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-semibold text-gray-700">
+                  <div className="space-y-3">
+                    <Label htmlFor="email" className="text-sm font-semibold text-gray-900">
                       Correo electrónico
                     </Label>
                     <Input
@@ -161,13 +161,13 @@ export default function Contacto() {
                       value={form.email}
                       onChange={(e) => handleChange("email", e.target.value)}
                       maxLength={255}
-                      className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                      className="rounded-lg border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
-                    {errors.email && <p className="text-sm font-medium text-red-500">{errors.email}</p>}
+                    {errors.email && <p className="text-sm font-medium text-red-600">{errors.email}</p>}
                   </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="mensaje" className="text-sm font-semibold text-gray-700">
+                  <div className="space-y-3">
+                    <Label htmlFor="mensaje" className="text-sm font-semibold text-gray-900">
                       Mensaje
                     </Label>
                     <Textarea
@@ -177,16 +177,16 @@ export default function Contacto() {
                       value={form.mensaje}
                       onChange={(e) => handleChange("mensaje", e.target.value)}
                       maxLength={1000}
-                      className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                      className="rounded-lg border-gray-200 focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                     />
-                    {errors.mensaje && <p className="text-sm font-medium text-red-500">{errors.mensaje}</p>}
+                    {errors.mensaje && <p className="text-sm font-medium text-red-600">{errors.mensaje}</p>}
                   </div>
 
                   <Button 
                     type="submit" 
                     size="lg" 
                     disabled={sending} 
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-lg transition-all"
+                    className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-3 rounded-lg transition-all"
                   >
                     {sending ? "Enviando..." : "Enviar mensaje"}
                     {!sending && <Send className="ml-2 h-4 w-4" />}

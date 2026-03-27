@@ -59,7 +59,7 @@ export default function Home() {
             className="h-full w-full object-cover"
           />
           
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-transparent to-blue-950/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-transparent to-blue-950/300" />
         </div>
         <div className="container relative z-10 py-20 md:py-24 lg:py-32">
           <div className="max-w-3xl">
@@ -111,15 +111,15 @@ export default function Home() {
               />
               <QuickCard
                 icon={<BookOpen className="h-8 w-8" />}
-                title="Material de estudio"
-                description="Accedé a guías, bibliografía y recursos educativos."
+                title="Trabajos Integradores"
+                description="Accedé a los trabajos integradores para cada asignatura del turno mañana y tarde."
                 to="/material-estudio"
               />
               <QuickCard
                 icon={<Calendar className="h-8 w-8" />}
                 title="Calendario escolar"
-                description="Fechas de exámenes, feriados y eventos institucionales."
-                to="/horarios"
+                description="Consultá el calendario escolar 2026 con fechas clave del ciclo lectivo y feriados nacionales."
+                to="https://educacion.lapampa.edu.ar/images/raiz/ministerio/calendario_escolar/2026/almanaque-mensual-2026.pdf"
               />
             </div>
           </div>
@@ -224,11 +224,10 @@ function QuickCard({
   description: string;
   to: string;
 }) {
-  return (
-    <Link
-      to={to}
-      className="group flex flex-col gap-4 rounded-xl border border-blue-100 bg-white p-8 hover:shadow-xl hover:scale-[1.02] hover:border-orange-300 transition-all duration-300"
-    >
+  const isExternal = to.startsWith("http");
+  
+  const cardContent = (
+    <>
       <div className="h-14 w-14 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white group-hover:shadow-lg group-hover:scale-110 transition-all">
         {icon}
       </div>
@@ -243,6 +242,28 @@ function QuickCard({
       <span className="text-sm font-semibold text-orange-500 flex items-center gap-2 mt-auto group-hover:gap-3 transition-all">
         Ver más <ArrowRight className="h-4 w-4" />
       </span>
+    </>
+  );
+
+  if (isExternal) {
+    return (
+      <a
+        href={to}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex flex-col gap-4 rounded-xl border border-blue-100 bg-white p-8 hover:shadow-xl hover:scale-[1.02] hover:border-orange-300 transition-all duration-300"
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      to={to}
+      className="group flex flex-col gap-4 rounded-xl border border-blue-100 bg-white p-8 hover:shadow-xl hover:scale-[1.02] hover:border-orange-300 transition-all duration-300"
+    >
+      {cardContent}
     </Link>
   );
 }

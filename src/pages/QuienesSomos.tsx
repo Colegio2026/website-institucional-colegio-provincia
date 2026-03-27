@@ -55,17 +55,17 @@ const sections: StaffSection[] = [
 
 function StaffCard({ member }: { member: StaffMember }) {
   return (
-    <article className="group rounded-xl border border-blue-100 bg-white overflow-hidden hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
-      <div className="aspect-square overflow-hidden bg-blue-50">
+    <article className="group rounded-lg border border-gray-200 bg-white overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+      <div className="aspect-square overflow-hidden bg-secondary">
         <img
           src={member.image}
           alt={member.name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
       <div className="p-6 text-center">
-        <h3 className="font-bold text-black mb-2 group-hover:text-orange-500 transition-colors">{member.name}</h3>
-        <p className="text-sm text-gray-600 font-medium">{member.role}</p>
+        <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-accent transition-colors">{member.name}</h3>
+        <p className="text-base text-gray-600 font-medium">{member.role}</p>
       </div>
     </article>
   );
@@ -75,38 +75,38 @@ export default function QuienesSomos() {
   return (
     <>
       {/* Header */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="container py-20 md:py-24">
-          <p className="text-sm font-semibold uppercase tracking-widest text-orange-400 mb-4">
+      <section className="bg-primary text-white">
+        <div className="container px-4 md:px-6 py-16 md:py-24 lg:py-32">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-widest text-accent mb-4 md:mb-6">
             Nuestra institución
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-8 leading-tight">
             ¿Quiénes somos?
           </h1>
-          <p className="text-lg text-primary-foreground/90 max-w-2xl leading-relaxed font-light">
+          <p className="text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
             Conocé al equipo directivo, la secretaría, el personal auxiliar y la coordinación, que trabajan cada día de manera articulada para brindar una educación de calidad y acompañar el desarrollo integral de nuestros estudiantes.
           </p>
         </div>
       </section>
 
       {/* Staff sections */}
-      <div className="bg-gradient-to-b from-white to-blue-50 py-20">
-        <div className="container space-y-20">
+      <div className="bg-secondary/20 py-16 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6 space-y-20 md:space-y-32">
           {sections.map((section, index) => (
-              <section key={section.title} className="text-black font-bold">
-                <div className="flex items-center gap-4 mb-12">
-                  <div className="h-1 w-12 bg-orange-500 rounded-full"></div>
-                  <h2 className="text-3xl font-display font-bold text-black tracking-tight">
+              <section key={section.title} className="text-gray-900">
+                <div className="flex items-center gap-4 mb-12 md:mb-16">
+                  <div className="h-1 w-12 bg-accent rounded-full"></div>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
                     {section.title}
                   </h2>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
                   {section.members.map((member) => (
                     <StaffCard key={member.name} member={member} />
                   ))}
                 </div>
                 {index < sections.length - 1 && (
-                  <div className="mt-20 border-t border-blue-100"></div>
+                  <div className="mt-20 md:mt-28 border-t border-gray-200"></div>
                 )}
               </section>
             ))}

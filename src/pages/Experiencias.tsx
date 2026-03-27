@@ -47,41 +47,41 @@ const experiencias = [
 export default function Experiencias() {
   return (
     <>
-      <section className="bg-primary text-primary-foreground">
-        <div className="container py-20 md:py-24">
-          <p className="text-sm font-semibold uppercase tracking-widest text-orange-400 mb-4">
+      <section className="bg-primary text-white">
+        <div className="container px-4 md:px-6 py-16 md:py-24 lg:py-32">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-widest text-accent mb-4 md:mb-6">
             Vivencias escolares
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-8 leading-tight">
             Experiencias escolares
           </h1>
-          <p className="text-lg text-primary-foreground/90 max-w-2xl leading-relaxed font-light">
+          <p className="text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
             Proyectos, salidas y actividades que enriquecen la formación integral de nuestros estudiantes.
           </p>
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white to-blue-50 py-20 md:py-24">
-        <div className="container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="bg-secondary/20 py-16 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {experiencias.map((exp) => (
               <article
                 key={exp.title}
-                className="group rounded-xl overflow-hidden border border-blue-100 bg-white hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+                className="group rounded-lg overflow-hidden border border-gray-200 bg-white hover:shadow-lg hover:border-primary/30 transition-all duration-300"
               >
-                <div className="aspect-[4/3] overflow-hidden bg-blue-50">
+                <div className="aspect-[4/3] overflow-hidden bg-secondary">
                   <img
                     src={exp.image}
                     alt={exp.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-lg text-black mb-3 group-hover:text-orange-500 transition-colors">
+                <div className="p-6 md:p-7 flex flex-col h-full">
+                  <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-3 group-hover:text-accent transition-colors line-clamp-2">
                     {exp.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm md:text-base text-muted leading-relaxed line-clamp-4 flex-1">
                     {exp.description}
                   </p>
                 </div>

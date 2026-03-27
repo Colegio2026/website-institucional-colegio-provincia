@@ -19,60 +19,69 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="font-display text-xl font-bold text-black tracking-tight hover:text-orange-500 transition-colors">
-          Provincia de La Pampa
+      <nav className="container flex h-16 md:h-20 items-center justify-between px-4 md:px-6">
+        {/* Logo/Brand */}
+        <Link 
+          to="/" 
+          className="flex flex-col shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded py-1"
+        >
+          <span className="text-lg md:text-xl font-bold text-primary leading-tight">
+            Provincia
+          </span>
+          <span className="text-xs font-semibold text-primary/70 leading-none">
+            La Pampa
+          </span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-6">
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-1 xl:gap-2">
           {links.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
               className={cn(
-                "text-sm font-semibold transition-colors duration-200",
+                "px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 whitespace-nowrap",
                 pathname === to
-                  ? "text-orange-500"
-                  : "text-black hover:text-orange-500"
+                  ? "bg-primary/10 text-primary font-semibold"
+                  : "text-gray-700 hover:text-primary hover:bg-gray-50"
               )}
             >
               {label}
             </Link>
           ))}
-        </nav>
+        </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 rounded-md text-black hover:text-orange-500 hover:bg-gray-100 transition-colors"
+          className="lg:hidden p-2.5 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </div>
+      </nav>
 
-      {/* Mobile nav */}
+      {/* Mobile Navigation */}
       {mobileOpen && (
-        <nav className="lg:hidden border-t border-gray-200 bg-white">
-          <div className="container py-4 flex flex-col gap-3">
+        <div className="lg:hidden border-t border-gray-200 bg-white">
+          <nav className="container px-4 py-3 space-y-1 md:px-6">
             {links.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
                 onClick={() => setMobileOpen(false)}
                 className={cn(
-                  "px-3 py-2.5 rounded-md text-sm font-semibold transition-all duration-200",
+                  "block px-3 py-2.5 rounded-md text-sm font-medium transition-all duration-200",
                   pathname === to
-                    ? "text-orange-500 bg-orange-50"
-                    : "text-black hover:text-orange-500 hover:bg-gray-50"
+                    ? "bg-primary/10 text-primary font-semibold"
+                    : "text-gray-700 hover:bg-gray-100 hover:text-primary"
                 )}
               >
                 {label}
               </Link>
             ))}
-          </div>
-        </nav>
+          </nav>
+        </div>
       )}
     </header>
   );

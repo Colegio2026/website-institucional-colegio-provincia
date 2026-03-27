@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', "sans-serif"],
-        display: ['"Fraunces"', "serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+        display: ["Inter", "system-ui", "-apple-system", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
