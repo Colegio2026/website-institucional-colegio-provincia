@@ -119,7 +119,7 @@ export default function Contacto() {
                     {item.icon}
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs md:text-sm font-semibold text-muted uppercase tracking-wide">{item.label}</p>
+                    <p className="text-xs md:text-sm font-semibold text-gray-900 uppercase tracking-wide">{item.label}</p>
                     <p className="text-base font-medium text-gray-900 mt-2">{item.value}</p>
                   </div>
                 </div>
