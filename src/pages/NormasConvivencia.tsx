@@ -86,7 +86,7 @@ export default function NormasConvivencia() {
                 <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
                   Principios fundamentales
                 </h2>
-                <p className="text-muted leading-relaxed">
+                <p className="text-lg text-gray-900 leading-relaxed">
                   La convivencia escolar se fundamenta en el respeto mutuo, la responsabilidad, la inclusión y la solidaridad. Estas normas buscan crear un espacio de aprendizaje donde todos podamos desarrollarnos plenamente como personas y ciudadanos.
                 </p>
               </div>
@@ -105,7 +105,7 @@ export default function NormasConvivencia() {
                     {seccion.title}
                   </h2>
                 </div>
-                <ul className="list-disc pl-6 space-y-3 text-muted leading-relaxed">
+                <ul className="list-disc pl-6 space-y-3 text-lg text-gray-900 leading-relaxed">
                   {seccion.items.map((item, index) => (
                     <li key={index} className="text-base">
                       {item}
@@ -124,7 +124,7 @@ export default function NormasConvivencia() {
             <p className="text-gray-900 leading-relaxed mb-4">
               El incumplimiento de estas normas puede resultar en medidas disciplinarias que incluyen:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted">
+            <ul className="list-disc pl-6 space-y-2 text-medium text-gray-900">
               <li>Amonestaciones verbales y escritas</li>
               <li>Pérdida de permisos y privilegios escolares</li>
               <li>Suspensión temporal</li>
@@ -140,12 +140,12 @@ export default function NormasConvivencia() {
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">
               Más información
             </h3>
-            <p className="text-muted mb-4">
+            <p className="text-medium text-gray-900 mb-4">
               Para consultas o dudas sobre estas normas, podés comunicarte con:
             </p>
             <div className="space-y-3 text-gray-900">
-              <p><strong className="text-primary">Coordinación de Convivencia:</strong> <span className="text-muted">convivencia@escuelaprovincia.edu.ar</span></p>
-              <p><strong className="text-primary">Dirección:</strong> <span className="text-muted">(02954) 42-1234 - Ext. 101</span></p>
+              <p><strong className="text-primary">Coordinación de Convivencia:</strong> <span className="text-medium text-gray-900">convivencia@escuelaprovincia.edu.ar</span></p>
+              <p><strong className="text-primary">Dirección:</strong> <span className="text-medium text-gray-900">(02954) 42-1234 - Ext. 101</span></p>
             </div>
           </div>
         </div>

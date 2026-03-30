@@ -20,7 +20,7 @@ export default function MaterialEstudio() {
           <div className="max-w-2xl mx-auto">
             <div className="rounded-lg border border-gray-200 bg-white p-10 md:p-16 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
               <div className="text-center">
-                <p className="text-xs md:text-sm font-semibold text-muted uppercase tracking-widest mb-4 md:mb-6">
+                <p className="text-xs md:text-sm font-semibold  text-gray-900 uppercase tracking-widest mb-4 md:mb-6">
                   Acceso a recursos
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-10">

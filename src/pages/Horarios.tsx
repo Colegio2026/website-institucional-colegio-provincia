@@ -62,7 +62,7 @@ function TurnoCard({
       </div>
       <div>
         <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-accent transition-colors">{title}</h2>
-        <p className="text-sm md:text-base text-muted leading-relaxed">{description}</p>
+        <p className="text-sm md:text-base text-gray-900 leading-relaxed">{description}</p>
       </div>
       <span className="text-sm font-semibold text-accent flex items-center gap-2 mt-auto group-hover:gap-3 transition-all">
         Ver horarios <ExternalLink className="h-4 w-4" />

@@ -81,7 +81,7 @@ export default function Experiencias() {
                   <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-3 group-hover:text-accent transition-colors line-clamp-2">
                     {exp.title}
                   </h3>
-                  <p className="text-sm md:text-base text-muted leading-relaxed line-clamp-4 flex-1">
+                  <p className="text-sm md:text-base text-gray-900 leading-relaxed line-clamp-4 flex-1">
                     {exp.description}
                   </p>
                 </div>

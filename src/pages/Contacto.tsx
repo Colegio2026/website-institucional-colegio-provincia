@@ -29,7 +29,7 @@ const infoItems = [
   {
     icon: <MapPin className="h-5 w-5" />,
     label: "Dirección",
-    value: "Av. San Martín 450, Santa Rosa, La Pampa",
+    value: "Chile 220, L6300, Santa Rosa, La Pampa, Argentina",
   },
   {
     icon: <Clock className="h-5 w-5" />,
@@ -92,48 +92,43 @@ export default function Contacto() {
 
       <section className="bg-secondary/20 py-16 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            {/* Info */}
-            <div className="lg:col-span-2 space-y-8">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
-                  Información de contacto
-                </h2>
-                <p className="text-muted text-base">
-                  Nos encontramos disponibles para brindarte la ayuda que necesites.
-                </p>
-              </div>
-              <div className="space-y-6">
-                {infoItems.map((item) => (
-                  <div key={item.label} className="flex gap-4 p-5 md:p-6 rounded-lg bg-white border border-gray-200 hover:shadow-md hover:border-primary/20 transition-all">
-                    <div className="h-12 w-12 rounded-lg bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-xs md:text-sm font-semibold text-muted uppercase tracking-wide">{item.label}</p>
-                      <p className="text-base font-medium text-gray-900 mt-2">{item.value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* Column Headers */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Información de contacto
+              </h2>
+              <p className="text-muted text-base mt-2">
+                Nos encontramos disponibles para brindarte la ayuda que necesites.
+              </p>
+            </div>
+            <div className="md:flex md:flex-col md:justify-start">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Envianos un mensaje
+              </h2>
+            </div>
+          </div>
 
-              {/* Map placeholder */}
-              <div className="rounded-lg overflow-hidden border border-gray-200 aspect-[4/3] shadow-sm">
-                <iframe
-                  title="Ubicación de la escuela"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-64.30%2C-36.63%2C-64.26%2C-36.61&layer=mapnik"
-                  className="h-full w-full border-0"
-                  loading="lazy"
-                />
-              </div>
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
+            {/* Info Section */}
+            <div className="space-y-6">
+              {infoItems.map((item) => (
+                <div key={item.label} className="flex gap-4 p-5 md:p-6 rounded-lg bg-white border border-gray-200 hover:shadow-md hover:border-primary/20 transition-all">
+                  <div className="h-12 w-12 rounded-lg bg-primary/15 flex items-center justify-center text-primary flex-shrink-0">
+                    {item.icon}
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs md:text-sm font-semibold text-muted uppercase tracking-wide">{item.label}</p>
+                    <p className="text-base font-medium text-gray-900 mt-2">{item.value}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            {/* Form */}
-            <div className="lg:col-span-3">
+            {/* Form Section */}
+            <div>
               <div className="rounded-lg border border-gray-200 bg-white p-8 md:p-10 shadow-sm hover:shadow-md transition-shadow">
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-8">
-                  Envianos un mensaje
-                </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-3">
                     <Label htmlFor="nombre" className="text-sm font-semibold text-gray-900">
@@ -195,8 +190,29 @@ export default function Contacto() {
               </div>
             </div>
           </div>
+
+          {/* Map Section */}
+          <div className="w-full">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Ubicación de la escuela
+              </h2>
+            </div>
+            <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm aspect-video md:aspect-[16/9] lg:aspect-[21/9]">
+              <iframe 
+                title="Ubicación de la escuela"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3201.9693637330415!2d-64.30341082476853!3d-36.62712406715618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95c2cd0359c0e3eb%3A0xac00772985ad2874!2sChile%20220%2C%20L6300CZF%20Santa%20Rosa%2C%20La%20Pampa!5e0!3m2!1ses!2sar!4v1774895398160!5m2!1ses!2sar" 
+                className="h-full w-full border-0"
+                style={{border: 0}}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </>
   );
 }
+

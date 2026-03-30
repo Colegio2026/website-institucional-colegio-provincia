@@ -94,20 +94,20 @@ export default function QuienesSomos() {
         <div className="container px-4 md:px-6 space-y-20 md:space-y-32">
           {sections.map((section, index) => (
               <section key={section.title} className="text-gray-900">
-                <div className="flex items-center gap-4 mb-12 md:mb-16">
-                  <div className="h-1 w-12 bg-accent rounded-full"></div>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                    {section.title}
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-                  {section.members.map((member) => (
-                    <StaffCard key={member.name} member={member} />
-                  ))}
-                </div>
-                {index < sections.length - 1 && (
-                  <div className="mt-20 md:mt-28 border-t border-gray-200"></div>
-                )}
+                  <div className="flex items-center gap-4 mb-12 md:mb-16">
+                    <div className="h-1 w-12 bg-accent rounded-full"></div>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+                      {section.title}
+                    </h2>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                    {section.members.map((member) => (
+                      <StaffCard key={member.name} member={member} />
+                    ))}
+                  </div>
+                  {index < sections.length - 1 && (
+                    <div className="mt-20 md:mt-28 border-t border-gray-200"></div>
+                  )}
               </section>
             ))}
         </div>
