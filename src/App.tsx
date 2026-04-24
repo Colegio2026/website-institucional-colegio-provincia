@@ -12,6 +12,7 @@ import TurnoManana from "./pages/TurnoManana";
 import TurnoTarde from "./pages/TurnoTarde";
 import Experiencias from "./pages/Experiencias";
 import MaterialEstudio from "./pages/MaterialEstudio";
+import BitacoraPromociones from "./pages/BitacoraPromociones";
 import Contacto from "./pages/Contacto";
 import NotFound from "./pages/NotFound";
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/horarios/turno-tarde" element={<TurnoTarde />} />
             <Route path="/experiencias" element={<Experiencias />} />
             <Route path="/material-estudio" element={<MaterialEstudio />} />
+            <Route path="/promociones" element={<BitacoraPromociones />} />
             <Route path="/contacto" element={<Contacto />} />
           </Route>
           <Route path="*" element={<NotFound />} />

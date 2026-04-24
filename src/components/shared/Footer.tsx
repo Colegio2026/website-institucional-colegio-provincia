@@ -81,8 +81,8 @@ export default function Footer() {
               Horario
             </h4>
             <div className="text-sm opacity-80 space-y-2">
-              <p><strong className="opacity-100">Turno Mañana:</strong><br/>7:30 - 12:50</p>
-              <p><strong className="opacity-100">Turno Tarde:</strong><br/>12:50 - 18:10</p>
+              <p><strong className="opacity-100">Turno Mañana:</strong><br/>7:45 - 12:55</p>
+              <p><strong className="opacity-100">Turno Tarde:</strong><br/>13:15 - 18:20</p>
             </div>
           </div>
         </div>

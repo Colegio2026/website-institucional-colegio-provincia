@@ -6,10 +6,11 @@ import { Menu, X } from "lucide-react";
 const links = [
   { to: "/", label: "Inicio" },
   { to: "/quienes-somos", label: "¿Quiénes somos?" },
-  { to: "/normas", label: "Normas de convivencia" },
+  { to: "/normas", label: "Acuerdo escolar de convivencia" },
   { to: "/horarios", label: "Horarios" },
   { to: "/experiencias", label: "Experiencias escolares" },
-  { to: "/material-estudio", label: "Trabajos integradores" },
+  { to: "/material-estudio", label: "Recursos académicos" },
+  { to: "/promociones", label: "Promociones" },
   { to: "/contacto", label: "Contacto" },
 ];
 

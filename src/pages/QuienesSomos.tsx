@@ -1,18 +1,6 @@
-import staffDirectora from "@/assets/staff-directora.jpg";
-import staffVicedirectora from "@/assets/staff-vicedirectora.jpg";
-import staffSecretaria from "@/assets/staff-secretaria.png";
-import staffAuxiliar1 from "@/assets/staff-auxiliar1.jpg";
-import staffAuxiliar2 from "@/assets/staff-auxiliar2.jpg";
-import staffAuxiliar3 from "@/assets/staff-auxiliar3.jpg";
-import staffAuxiliar4 from "@/assets/staff-auxiliar4.jpg";
-import staffAuxiliar5 from "@/assets/staff-auxiliar5.jpg";
-import staffCoord1 from "@/assets/staff-coord1.webp";
-import staffCoord2 from "@/assets/staff-coord2.jpg";
-
 interface StaffMember {
   name: string;
   role: string;
-  image: string;
 }
 
 interface StaffSection {
@@ -24,48 +12,47 @@ const sections: StaffSection[] = [
   {
     title: "Dirección",
     members: [
-      { name: "María Elena Gutiérrez", role: "Directora", image: staffDirectora },
-      { name: "Laura Beatriz Domínguez", role: "Vicedirectora", image: staffVicedirectora },
+      { name: "María Elena Gutiérrez", role: "Directora" },
+      { name: "Laura Beatriz Domínguez", role: "Vicedirectora" },
     ],
   },
   {
     title: "Secretaría",
     members: [
-      { name: "Gabriela Martínez", role: "Secretaria", image: staffSecretaria },
+      { name: "Gabriela Martínez", role: "Secretaria" },
     ],
   },
   {
     title: "Auxiliares",
     members: [
-      { name: "Andrea Soledad Fernández", role: "Auxiliar a cargo de 1° año", image: staffAuxiliar1 },
-      { name: "Valeria Roxana García", role: "Auxiliar a cargo de 2° año", image: staffAuxiliar2 },
-      { name: "Héctor Manuel Rodríguez", role: "Auxiliar a cargo de 3° año", image: staffAuxiliar3 },
-      { name: "Daniela Sofía Peña", role: "Auxiliar a cargo de 4° año", image: staffAuxiliar4 },
-      { name: "Juan Carlos Suárez", role: "Auxiliar a cargo de 5° y 6° año", image: staffAuxiliar5 },
+      { name: "Andrea Soledad Fernández", role: "Auxiliar a cargo de 1° año" },
+      { name: "Valeria Roxana García", role: "Auxiliar a cargo de 2° año" },
+      { name: "Héctor Manuel Rodríguez", role: "Auxiliar a cargo de 3° año" },
+      { name: "Daniela Sofía Peña", role: "Auxiliar a cargo de 4° año" },
+      { name: "Juan Carlos Suárez", role: "Auxiliar a cargo de 5° y 6° año" },
     ],
   },
   {
     title: "Coordinadores",
     members: [
-      { name: "Camila Andrea Torres", role: "Coordinadora académica", image: staffCoord1 },
-      { name: "Patricia Alessandra Gómez", role: "Coordinadora de convivencia", image: staffCoord2 },
+      { name: "Camila Andrea Torres", role: "Coordinadora académica" },
+      { name: "Patricia Alessandra Gómez", role: "Coordinadora de convivencia" },
+    ],
+  },
+  {
+    title: "Desarrollo tecnológico",
+    members: [
+      { name: "Jonathan Fussini", role: "Referente tecnológico" },
     ],
   },
 ];
 
 function StaffCard({ member }: { member: StaffMember }) {
   return (
-    <article className="group rounded-lg border border-gray-200 bg-white overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-      <div className="aspect-square overflow-hidden bg-secondary">
-        <img
-          src={member.image}
-          alt={member.name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-      <div className="p-6 text-center">
-        <h3 className="font-bold text-lg text-gray-900 mb-2 group-hover:text-accent transition-colors">{member.name}</h3>
-        <p className="text-base text-gray-600 font-medium">{member.role}</p>
+    <article className="group rounded-lg border border-gray-200 bg-white p-8 flex flex-col items-center justify-center min-h-48 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+      <div className="text-center">
+        <h3 className="font-bold text-lg text-gray-900 mb-3 group-hover:text-accent transition-colors">{member.name}</h3>
+        <p className="text-sm text-gray-600 font-medium">{member.role}</p>
       </div>
     </article>
   );

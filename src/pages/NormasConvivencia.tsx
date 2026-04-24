@@ -67,7 +67,7 @@ export default function NormasConvivencia() {
             Comunidad educativa
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-8 leading-tight">
-            Normas de convivencia
+            Acuerdo escolar de convivencia
           </h1>
           <p className="text-base md:text-lg text-white/90 max-w-2xl leading-relaxed">
             Guía de convivencia que garantiza un ambiente seguro, respetuoso e inclusivo para todos los miembros de nuestra comunidad educativa.
